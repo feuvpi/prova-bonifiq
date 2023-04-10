@@ -21,11 +21,6 @@ namespace ProvaPub.Controllers
 		TestDbContext _ctx;
         private readonly CustomerService _customerService;
         private readonly ProductService _productService;
-  //      public Parte2Controller(TestDbContext ctx)
-		//{
-		//	_ctx = ctx;
-		//}
-
         public Parte2Controller(TestDbContext ctx, CustomerService customerService, ProductService productService)
         {
             _ctx = ctx;
@@ -36,14 +31,12 @@ namespace ProvaPub.Controllers
         [HttpGet("products")]
 		public ProductList ListProducts(int page)
 		{
-			//var productService = new ProductService(_ctx);
-			return _productService.ListProducts(page);
+            return _productService.ListProducts(page);
 		}
 
 		[HttpGet("customers")]
 		public CustomerList ListCustomers(int page)
 		{
-			//var customerService = new CustomerService(_ctx);
 			return _customerService.ListCustomers(page);
 		}
 	}

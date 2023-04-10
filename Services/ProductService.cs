@@ -15,6 +15,7 @@ namespace ProvaPub.Services
 
 		public ProductList ListProducts(int page)
 		{
+            if (page < 1) page = 1;
             int pageSize = 10; // quantidade de itens por página
             int skip = (page - 1) * pageSize; // -- quantidade de itens a serem ignorados
             int totalCount = _ctx.Products.Count();
