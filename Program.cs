@@ -4,6 +4,10 @@ using ProvaPub.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<ProductService>();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
