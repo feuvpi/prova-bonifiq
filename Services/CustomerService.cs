@@ -12,6 +12,10 @@ namespace ProvaPub.Services
 
         public async Task<bool> CanPurchase(int customerId, decimal purchaseValue)
         {
+
+            var teste = _ctx.Customers;
+            var teste2 = _dbSet;
+            
             if (customerId <= 0) throw new ArgumentOutOfRangeException(nameof(customerId));
 
             if (purchaseValue <= 0) throw new ArgumentOutOfRangeException(nameof(purchaseValue));
@@ -23,7 +27,7 @@ namespace ProvaPub.Services
             //Business Rule: A customer can purchase only a single time per month
             var baseDate = DateTime.UtcNow.AddMonths(-1);
             var ordersInThisMonth = _ctx.Orders.Count(o => o.CustomerId == customerId && o.OrderDate >= baseDate);
-            if (ordersInThisMonth > 1)
+            if (ordersInThisMonth > 0) // alterei esse if pois não estava de acordo com a regra do negocio comentada acima, o que tava impactando nos testes.
                 return false;
 
             //Business Rule: A customer that never bought before can make a first purchase of maximum 100,00
