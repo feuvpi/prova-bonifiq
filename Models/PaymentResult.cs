@@ -2,8 +2,8 @@
 {
     public class PaymentResult
     {
-        #region [ ATRIBUTES ]
-        public string TransactionId { get; set; }
+        #region [ PROPRIEDADES ]
+        public string Id { get; set; }
         public decimal Amount { get; set; }
         public DateTime TransactionDate { get; set; }
         public PaymentStatus Status { get; set; }
