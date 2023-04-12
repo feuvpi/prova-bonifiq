@@ -12,10 +12,6 @@ namespace ProvaPub.Services
 
         public async Task<bool> CanPurchase(int customerId, decimal purchaseValue)
         {
-
-            var teste = _ctx.Customers;
-            var teste2 = _dbSet;
-            
             if (customerId <= 0) throw new ArgumentOutOfRangeException(nameof(customerId));
 
             if (purchaseValue <= 0) throw new ArgumentOutOfRangeException(nameof(purchaseValue));
