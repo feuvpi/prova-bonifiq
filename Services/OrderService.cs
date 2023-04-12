@@ -1,6 +1,6 @@
 ﻿using ProvaPub.Interfaces;
 using ProvaPub.Models;
-using static ProvaPub.Models.PaymentResult;
+
 
 namespace ProvaPub.Services
 {
